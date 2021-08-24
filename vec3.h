@@ -67,6 +67,43 @@ class vec3 {
         }
 };
 
+// vec3 Utility Functions
+
+// Output Values
+
+// Add two vectors
+
+// Subtract two vectors
+
+
+// Scale vector values by multiplier (make larger)
+
+// Scale vector values by multiplier (make larger)
+
+// I don't really see the difference in the difference
+// ways that it scales the vector other than where you put the muliplier.
+
+// Scale vector with division (make smaller)
+
+// Dot product
+
+// Shirley mentions that you should probably review linear algebra for things like the dot product
+// I don't have a ton of experience with linear algebra and it was still quite easy to follow
+// without having to go through an entire textbook.
+
+// This is what I followed:
+// https://betterexplained.com/articles/vector-calculus-understanding-the-dot-product/
+inline double dot(const vec3 &u, const vec3 &v) {
+    return u.e[0] * v.e[0]
+        + u.e[1] * v.e[1]
+        + u.e[2] * v.e[2];
+}
+
+// Cross product
+
+// Unit vector
+
+
 // Type aliases for vec3
 using point3 = vec3;   // 3D point
 using color = vec3;    // RGB color
