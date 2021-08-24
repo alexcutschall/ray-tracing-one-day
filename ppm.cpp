@@ -11,6 +11,8 @@ int main() {
 
     // This is starting at 256 and goes down to 0, meaning it goes top to bottom
     for(int j = image_height - 1; j >= 0; --j) {
+        // This helps identify issues such as infinite loops
+        std::cerr << "\rScalines remaining: " << j << ' ' << std::flush;
         // This starts at 0 and goes to 256, meaning it goes left to right
         for (int i = 0; i < image_width; ++i) {
             // This is calculating the color based of the position on the screen
@@ -27,4 +29,6 @@ int main() {
             std::cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+
+    std::cerr << "\nDone.\n";
 }
