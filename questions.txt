@@ -1,0 +1,6 @@
+Questions:
+
+Ray Tracing vs Path Tracer?
+  - Shirley makes a distinguishment between the two. What is the difference?
+  - He mentions to be familiar with dot product and vector addition. Vector addition
+is quite simple, but I don't know dot product. What else should I learn?
