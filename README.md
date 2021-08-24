@@ -1,10 +1,4 @@
-# Output an image
+# The vec3 Class
 
-How to run the file:
-
-g++ -o ppm.exe ppm.cpp
-./ppm.exe > image.ppm
-
-I viewed the ppm files at this website:
-
-http://cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html
+This is where we start to get into the meat of image processing. From the bit I've learned about linear
+algebra, its all based around this.
