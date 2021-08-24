@@ -24,11 +24,24 @@ class vec3 {
             e[0] += v.e[0];
             e[1] += v.e[1];
             e[2] += v.e[2];
+            return *this;
         }
 
-        // Subtraction
-        
+        // Multiplication
+        vec3& operator*=(const double t) {
+            e[0] *= t;
+            e[1] *= t;
+            e[2] *= t;
+            return *this;
+        }
 
+        // Division
+        vec3& operator/=(const double t) {
+            // This is a clever solution. It reuses the multiplication code
+            // in order to do the divison
+            return *this *= 1/t;
+        }
+        
         // Negate values
         vec3 operator-() const { return vec3(-e[0], -e[1], -e[2]);  }
 
@@ -36,13 +49,22 @@ class vec3 {
         double operator[](int i) const { return e[i]; }
         double& operator[](int i) { return e[i]; }
 
-        public:
-            void print() {
-                std::cout << "\rMaking sure everything works properly\n";
-            }
+        // Length Operators
+        double length_squared() const {
+            return (e[0] * e[0]) + (e[1] * e[1]) * (e[2] * e[2]) ;
+        }
+
+        double length() const {
+            // Clever in reusing code. It seems a bit more confusing than
+            // how the division operator is, but functionality is correct
+            return sqrt(length_squared());
+        }
 
     public:
         double e[3];
+        void print() {
+            std::cout << "\rMaking sure everything works properly\n";
+        }
 };
 
 // Type aliases for vec3
