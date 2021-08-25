@@ -70,20 +70,35 @@ class vec3 {
 // vec3 Utility Functions
 
 // Output Values
+inline std::ostream& operator<<(std::ostream &out, const vec3 &vec) {
+    return out << vec.e[0] << ' ' << vec.e[1] << ' ' << vec.e[2];
+}
 
 // Add two vectors
+inline vec3 operator+(const vec3 &u, const vec3 &v) {
+    return vec3(u.e[0] + v.e[0], u.e[1] + v.e[1], u.e[2] + v.e[2]);
+}
 
 // Subtract two vectors
+inline vec3 operator-(const vec3 &u, const vec3 &v) {
+    return vec3(u.e[0] - v.e[0], u.e[1] - v.e[1], u.e[2] - v.e[2]);
+}
 
+// Multiply two vectors
+inline vec3 operator*(const vec3 &u, const vec3 &v) {
+    return vec3(u.e[0] * u.e[0], u.e[1] * v.e[1], v.e[2] * v.e[2]);
+}
 
 // Scale vector values by multiplier (make larger)
-
-// Scale vector values by multiplier (make larger)
+inline vec3 operator*(double t, const vec3 &v) {
+    return vec3(t * v.e[0], t * v.e[1], t * v.e[2]);
+}
 
 // I don't really see the difference in the difference
 // ways that it scales the vector other than where you put the muliplier.
 
 // Scale vector with division (make smaller)
+
 
 // Dot product
 
