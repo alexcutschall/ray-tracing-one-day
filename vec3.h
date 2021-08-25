@@ -98,6 +98,9 @@ inline vec3 operator*(double t, const vec3 &v) {
 // ways that it scales the vector other than where you put the muliplier.
 
 // Scale vector with division (make smaller)
+inline vec3 operator/(const vec3 v, double t) { 
+    return (1/t) * v;
+}
 
 
 // Dot product
@@ -116,7 +119,23 @@ inline double dot(const vec3 &u, const vec3 &v) {
 
 // Cross product
 
+// This was quite a bit more complicated than the dot product
+// Here's a breakdown of the formula
+
+// x = ay * bz - az * by
+// y = az * bx - ax * bz
+// z = ax * by - ay * bx
+inline vec3 cross(const vec3 &u,  const vec3 &v) {
+    double x = u.e[1] * v.e[2] - u.e[2] * v.e[1];
+    double y = u.e[2] * v.e[0] - u.e[0] * v.e[2];
+    double z = u.e[0] * v.e[1] - u.e[1] * v.e[0];
+    return vec3(x, y , z);
+} 
+
 // Unit vector
+inline vec3 unit_length(vec3 v) {
+    return v / v.length();
+}
 
 
 // Type aliases for vec3
